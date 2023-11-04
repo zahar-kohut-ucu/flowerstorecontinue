@@ -11,17 +11,17 @@ import com.example.lab7.flower.FlowerBucket;
 import com.example.lab7.flower.FlowerColor;
 import com.example.lab7.flower.FlowerPack;
 import com.example.lab7.flower.FlowerType;
-// import com.example.lab7.order.Order;
-// import com.example.lab7.order.delivery.DeliveryType;
-// import com.example.lab7.order.payment.PaymentType;
+import com.example.lab7.order.Order;
+import com.example.lab7.order.delivery.DeliveryType;
+import com.example.lab7.order.payment.PaymentType;
 
 public class PostStrategyTest {
-    private static final double SEPAL = 10;
-    private static final double PRCE = 15;
+    private static final double sepal = 10;
+    private static final double price = 15;
     private static final int ITER = 3;
     private Order ord = new Order();
     private Flower fl = new Flower(
-        SEPAL, PRCE, FlowerColor.BLUE, FlowerType.CHAMOMILE);
+        price, FlowerColor.BLUE, price, FlowerType.TULIP);
     private FlowerPack flPack = new FlowerPack(fl);
     private FlowerBucket bucket = new FlowerBucket();
 
