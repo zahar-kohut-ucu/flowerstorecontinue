@@ -10,6 +10,6 @@ public class DeliveryController {
 
     @GetMapping("/")
     public String getDelivery() {
-        return "Delivering your  order.....";
+        return "You order is being delivered.....";
     }
 }

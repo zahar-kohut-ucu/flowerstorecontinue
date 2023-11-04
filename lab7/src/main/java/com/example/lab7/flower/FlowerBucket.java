@@ -4,7 +4,7 @@ import java.util.List;
 
 import lombok.Getter;
 
-public class FlowerBucket {
+public class FlowerBucket extends Item {
     @Getter
     private List<FlowerPack> flowerPacks = new ArrayList<>();
 

@@ -7,8 +7,8 @@ import com.example.lab7.flower.Item;
 public class PostStrategy implements DeliveryStrategy {
     @Override
     public void delivery(List<Item> items) {
-        System.out.print("Items: "
+        System.out.print("Delivery of items: "
                          + items
-                         + "were delivered via Post Service.");
+                         + "via Post Service was succesfull.");
     }
 }

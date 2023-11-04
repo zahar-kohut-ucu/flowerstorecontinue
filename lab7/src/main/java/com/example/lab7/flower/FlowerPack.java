@@ -1,7 +1,7 @@
 package com.example.lab7.flower;
 import lombok.Getter;
 
-public class FlowerPack {
+public class FlowerPack extends Item {
     private Flower flower;
     @Getter
     private int quantity;

@@ -10,6 +10,6 @@ public class PaymentController {
 
     @GetMapping("/")
     public String getPayment() {
-        return "Payment in proccess.....";
+        return "Processing your payment.....";
     }
 }

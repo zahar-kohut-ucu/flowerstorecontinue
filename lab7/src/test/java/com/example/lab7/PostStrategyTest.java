@@ -16,24 +16,24 @@ import com.example.lab7.order.delivery.DeliveryType;
 import com.example.lab7.order.payment.PaymentType;
 
 public class PostStrategyTest {
-    private static final double sepal = 10;
-    private static final double price = 15;
+    private static final double sepal = 69;
+    private static final double price = 420;
     private static final int ITER = 3;
     private Order ord = new Order();
     private Flower fl = new Flower(
-        price, FlowerColor.BLUE, price, FlowerType.TULIP);
+        sepal, FlowerColor.BLUE, price, FlowerType.TULIP);
     private FlowerPack flPack = new FlowerPack(fl);
     private FlowerBucket bucket = new FlowerBucket();
 
     @BeforeEach
     public void init() {
         for (int i = 0; i < ITER; i++) {
-            bucket.addFlowerPack(flPack);
+            bucket.add(flPack);
         }
 
         ord.addItem(bucket);
         ord.setPaymentStrategy(PaymentType.CARD);
-        ord.setDeliveryStrategy(DeliveryType.DHL);
+        ord.setDeliveryStrategy(DeliveryType.POST);
     }
 
     @Test
@@ -45,6 +45,6 @@ public class PostStrategyTest {
         String printedText = outputStream.toString();
 
         System.setOut(System.out);
-        printedText.contains("Order proccessed!");
+        printedText.contains("order success");
     }
 }

@@ -8,9 +8,9 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Payment {
-    private PaymentStrategy strategy;
+    private PaymentStrategy strat;
 
     public boolean pay(double price) {
-        return strategy.pay(price);
+        return strat.pay(price);
     }
 }

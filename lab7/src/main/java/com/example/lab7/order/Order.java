@@ -20,45 +20,45 @@ public class Order {
     private PaymentType payment;
     private DeliveryType delivery;
 
-    public void setPaymentStrategy(PaymentType paym) {
-        this.payment = paym;
-    }
-
-    public void setDeliveryStrategy(DeliveryType deliv) {
-        this.delivery = deliv;
-    }
-
-    public double calculateTotalPrice() {
-        double result = 0;
+    public double totalPrice() {
+        double total = 0;
         for (Item elem : items) {
-            result += elem.getPrice();
+            total = total + elem.getPrice();
         }
-        return result;
+        return total;
+    }
+
+    public void setPaymentStrategy(PaymentType ppayment) {
+        this.payment = ppayment;
+    }
+
+    public void setDeliveryStrategy(DeliveryType ddelivery) {
+        this.delivery = ddelivery;
     }
 
     public void processOrder() {
         Payment paym = new Payment(null);
         if (payment == PaymentType.CARD) {
-            paym.setStrategy(new CardStrategy());
+            paym.setStrat(new CardStrategy());
         }
         if (payment == PaymentType.PAYPAL) {
-            paym.setStrategy(new PayPalStrategy());
+            paym.setStrat(new PayPalStrategy());
         }
 
-        Delivery del = new Delivery(null);
+        Delivery deliv = new Delivery(null);
         if (delivery == DeliveryType.POST) {
-            del.setStrategy(new PostStrategy());
+            deliv.setStrat(new PostStrategy());
         }
         if (delivery == DeliveryType.DHL) {
-            del.setStrategy(new DHLStrategy());
+            deliv.setStrat(new DHLStrategy());
         }
 
-        if (paym.pay(calculateTotalPrice())) {
-            System.out.println("Payment is successful!");
-            del.delivery(items);
-            System.out.println("Order proccessed!");
+        if (paym.pay(totalPrice())) {
+            System.out.println("payment success");
+            deliv.delivery(items);
+            System.out.println("order success");
         } else {
-            System.out.println("Payment is unsuccessful! Try again.");
+            System.out.println("no success");
         }
 
     }

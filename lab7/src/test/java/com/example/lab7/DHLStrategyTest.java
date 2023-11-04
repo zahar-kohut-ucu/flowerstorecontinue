@@ -16,19 +16,19 @@ import com.example.lab7.order.delivery.DeliveryType;
 import com.example.lab7.order.payment.PaymentType;
 
 public class DHLStrategyTest {
-    private static final double SEPAL = 10;
-    private static final double PRCE = 15;
+    private static final double sepal = 69;
+    private static final double price = 420;
     private static final int ITER = 3;
     private Order ord = new Order();
     private Flower fl = new Flower(
-        SEPAL, PRCE, FlowerColor.BLUE, FlowerType.CHAMOMILE);
+        sepal, FlowerColor.GREEN, price, FlowerType.CHAMOMILE);
     private FlowerPack flPack = new FlowerPack(fl);
     private FlowerBucket bucket = new FlowerBucket();
 
     @BeforeEach
     public void init() {
         for (int i = 0; i < ITER; i++) {
-            bucket.addFlowerPack(flPack);
+            bucket.add(flPack);
         }
 
         ord.addItem(bucket);
@@ -45,7 +45,7 @@ public class DHLStrategyTest {
         String printedText = outputStream.toString();
 
         System.setOut(System.out);
-        printedText.contains("Order proccessed!");
+        printedText.contains("order success");
     }
 }
 

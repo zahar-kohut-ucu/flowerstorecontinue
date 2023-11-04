@@ -11,9 +11,9 @@ import com.example.lab7.flower.Item;
 @Getter
 @AllArgsConstructor
 public class Delivery {
-    private DeliveryStrategy strategy;
+    private DeliveryStrategy strat;
 
     public void delivery(List<Item> items) {
-        strategy.delivery(items);
+        strat.delivery(items);
     }
 }
