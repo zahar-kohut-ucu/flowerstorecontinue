@@ -1,10 +1,10 @@
-package ucu.edu.ua.lab7flower;
+package com.example.lab7;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Lab7flowerApplicationTests {
+class Lab7ApplicationTests {
 
 	@Test
 	void contextLoads() {

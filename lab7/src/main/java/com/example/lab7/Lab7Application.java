@@ -1,12 +1,13 @@
-package ucu.edu.ua.lab7flower;
+package com.example.lab7;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Lab7flowerApplication {
+public class Lab7Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Lab7flowerApplication.class, args);
+		SpringApplication.run(Lab7Application.class, args);
 	}
+
 }
