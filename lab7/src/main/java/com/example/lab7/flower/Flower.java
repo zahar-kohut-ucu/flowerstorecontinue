@@ -1,10 +1,15 @@
 package com.example.lab7.flower;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter @Getter
+@Entity
 public class Flower extends Item {
+    @Id
+    private int id;
     private final int defaultSepal = 69;
     private final double defaultPrice = 4.2;
     private double sepalLength;
