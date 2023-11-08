@@ -20,7 +20,7 @@ public class CardStrategyTest {
     private static final double price = 420;
     private static final int ITER = 3;
     private Order ord = new Order();
-    private Flower fl = new Flower(
+    private Flower fl = new Flower("test description",
         sepal, FlowerColor.BLUE, price, FlowerType.ROSE);
     private FlowerPack flPack = new FlowerPack(fl);
     private FlowerBucket bucket = new FlowerBucket();
@@ -38,6 +38,7 @@ public class CardStrategyTest {
 
     @Test
     public void processOrder() {
+        System.out.println(fl.getDescription());
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
 

@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter @Getter
 @Entity
 public class Flower extends Item {
+    private String description;
     @Id
     private int id;
     private final int defaultSepal = 69;
@@ -18,6 +19,7 @@ public class Flower extends Item {
     private FlowerType flowerType;
 
     public Flower() {
+        description = "Description of flower.";
         sepalLength = defaultSepal;
         color = FlowerColor.RED;
         price = defaultPrice;
@@ -25,11 +27,13 @@ public class Flower extends Item {
     }
 
     public Flower(
+    String description,
     double sepalLength,
     FlowerColor color,
     double price,
     FlowerType flowerType)
     {
+        this.description = description;
         this.sepalLength = sepalLength;
         this.color = color;
         this.price = price;
@@ -37,6 +41,7 @@ public class Flower extends Item {
     }
 
     public Flower(Flower flower) {
+        this.description = flower.description;
         this.sepalLength = flower.sepalLength;
         this.color = flower.color;
         this.price = flower.price;

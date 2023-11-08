@@ -20,7 +20,7 @@ public class PayPalStrategyTest {
     private static final double price = 420;
     private static final int ITER = 3;
     private Order ord = new Order();
-    private Flower fl = new Flower(
+    private Flower fl = new Flower("test description",
         sepal, FlowerColor.RED, price, FlowerType.ROSE);
     private FlowerPack flPack = new FlowerPack(fl);
     private FlowerBucket bucket = new FlowerBucket();
